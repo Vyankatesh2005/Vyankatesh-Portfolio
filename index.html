@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Portfolio2</title>
+    
+
+  </head>
+    
+  <body>
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vyankatesh Sharma — Portfolio</title>
+  <meta name="description" content="Vyankatesh Sharma — Electronics & Telecommunication engineering student. Embedded systems, STM32, ESP32, P10 displays and more.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Background + accents */
+      --bg-img: url('https://image-5.uhdpaper.com/wallpaper/desert-sky-clouds-scenery-4k-wallpaper-uhdpaper.com-278@5@d.jpg');
+      --header-banner: url('https://media.licdn.com/dms/image/v2/D4D16AQG-byDZLoeq1g/profile-displaybackgroundimage-shrink_350_1400/B4DZVUzqy5HwAY-/0/1740884586895?e=1762387200&v=beta&t=d8BC2IwcY_beKKDXRDurAftRaDCfuj51Vml18RfE3gU');
+      --profile-pic: url('https://media.licdn.com/dms/image/v2/D4E03AQH6_xt4O6kE-g/profile-displayphoto-crop_800_800/B4EZkvFA2MKsAI-/0/1757431473662?e=1762387200&v=beta&t=dtBRtL8YzYyL8uJFAn5wF4c8ouJ6BxL2i0Kg8ZEDUto');
+
+      /* New darker glass panel for attractive gradient theme */
+      --panel: linear-gradient(335deg, rgba(3,10,30,0.88), rgba(7,24,48,0.74));
+      --panel-2: linear-gradient(335deg, rgba(7,26,60,0.86), rgba(6,40,80,0.72));
+
+      --text: #e6f4ff;
+      --muted: rgba(230,244,255,0.7);
+      --accent: #39b5ff;
+      --accent-2: #6be0d6;
+      --accent-3: #ff8a7a;
+      --shadow: 0 14px 50px rgba(2,6,23,0.22);
+      --glass-outline: rgba(97,179,255,0.06);
+      --maxw:1200px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100%;
+      /* layered background: image + subtle focused vignette for visibility */
+      background-image:
+        radial-gradient(1000px 500px at 12% 12%, rgba(6,160,210,0.08), transparent 95%),
+        linear-gradient(180deg, rgba(1,6,20,0.18), rgba(1,6,20,0.18)),
+        var(--bg-img);
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      color:var(--text);
+      line-height:1.45;
+    }
+
+    .page-overlay{
+      position:fixed; inset:0; pointer-events:none;
+      background: linear-gradient(80deg, rgba(1,6,20,0.05), rgba(1,6,20,0.12));
+      z-index:0;
+    }
+    /* Hobbies Section — Transparent Glass Theme */
+.hobbies-scroll {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 12px 2px;
+  scroll-behavior: smooth;
+}
+.hobbies-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.hobbies-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+}
+
+.hobby-card {
+  flex: 0 0 auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all .45s cubic-bezier(.2,.9,.3,1);
+  cursor: pointer;
+  color: #f2f6fa;
+  text-align: center;
+}
+
+.hobby-card i {
+  font-size: 36px;
+  color: #39b5ff;
+  margin-bottom: 10px;
+  transition: all .4s ease;
+  filter: drop-shadow(0 2px 4px rgba(57,181,255,0.25));
+}
+
+.hobby-card span {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.hobby-card:hover {
+  transform: translateY(-18px) scale(1.1);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.hobby-card:hover i {
+  color: #6be0d6;
+  filter: drop-shadow(0 2px 8px rgba(107,224,214,0.5));
+}
+
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:46px 22px;
+      position:relative;
+      z-index:1;
+    }
+
+    /* Header: darker glass, profile image used as mark */
+     header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:14px 18px;
+      border-radius:14px;
+      background: var(--panel-2);
+      backdrop-filter: blur(8px);
+      box-shadow:var(--shadow);
+      background-image: var(--header-banner);
+      background-size:cover;
+      background-position:center;
+      background-blend-mode: lighten;
+      margin-bottom:26px;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      
+    
+    }
+    /* mark now uses your LinkedIn profile image */
+    .brand .mark{
+      width:56px;height:56px;border-radius:50%;
+      background-image: var(--profile-pic);
+      background-size:cover;
+      background-position:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+      border:2px solid rgba(255,255,255,0.8);
+      transition:transform .3s ease;
+    }
+    .brand .mark:hover{ transform: translateY(-6px) scale(1.05); box-shadow:0 26px 70px rgba(3,20,40,0.32); }
+    .brand .name{ font-weight:900; font-size:18px; color:var(--text); }
+    .brand .role{ font-size:12px; color:var(--muted); margin-top:2px; }
+
+    /* HERO: darker glass for panels with gradient theme */
+    .hero{
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between;
+      gap:18px;
+      border-radius:14px; 
+      padding:28px; 
+      background: var(--panel-2);
+      backdrop-filter: blur(8px);
+      box-shadow:var(--shadow);
+      border:1px solid var(--glass-outline);
+      transform:translateZ(0);
+    }
+
+    .hero-left{
+      display:flex; flex-direction:column; gap:6px;
+      min-width:320px;
+    }
+    .hero-name{
+      font-size:36px; font-weight:900; color:var(--text);
+      letter-spacing:-0.01em;
+    }
+    .hero-sub{
+      color:var(--muted); font-weight:600; font-size:14px;
+    }
+
+    .hero-contact{
+      margin-top:10px;
+      display:flex; gap:14px; align-items:center; color:var(--text);
+      font-weight:700; font-size:15px;
+    }
+    .phone-pill{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
+      background: linear-gradient(90deg, rgba(57,181,255,0.08), rgba(107,224,214,0.04));
+      color:var(--accent); font-weight:800;
+      transition: transform .22s ease, box-shadow .22s ease;
+      border:1px solid rgba(57,181,255,0.06);
+    }
+    .phone-pill:hover{ transform: translateY(-4px) scale(1.02); box-shadow:0 16px 36px rgba(3,20,40,0.12); }
+
+    .hero-right{
+      display:flex; align-items:center; gap:28px;
+    }
+    .profile-wrap{
+      width:120px; height:120px; border-radius:999px; border:4px solid rgba(255,255,255,0.06);
+      box-shadow:0 22px 70px rgba(2,6,23,0.28);
+      background-image: var(--profile-pic);
+      background-size:cover; background-position:center;
+      transition: transform .35s cubic-bezier(.2,.9,.3,1), box-shadow .35s ease;
+      will-change: transform;
+    }
+    .profile-wrap:hover{ transform: translateY(-8px) scale(1.05); box-shadow:0 34px 100px rgba(2,6,23,0.36); }
+
+    /* translucent coloured boxes & colorful blocks */
+    .translucent-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:12px; }
+    .trans-box{
+      flex:1; min-width:160px; padding:12px; border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:0 6px 22px rgba(3,12,30,0.06);
+      transition: transform .28s ease, box-shadow .28s ease;
+      color:var(--text);
+    }
+    .trans-box:hover{ transform: translateY(-8px) scale(1.02); box-shadow:0 20px 60px rgba(3,12,30,0.12); }
+
+    .color-blocks{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:10px; }
+    .cblock{
+      height:42px; min-width:42px; padding:10px 12px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+      color:white; font-weight:800; box-shadow:0 8px 26px rgba(2,6,23,0.06);
+      transform-origin:center center;
+      transition: transform .22s ease, box-shadow .22s ease;
+      cursor:default;
+    }
+    .cblock:hover{ transform: translateY(-6px) scale(1.05); box-shadow:0 20px 60px rgba(2,6,23,0.12); }
+    .cblock.tech{ background: linear-gradient(135deg,var(--accent),var(--accent-2)); }
+    .cblock.power{ background: linear-gradient(135deg,var(--accent-3),#ffbf6a); }
+    .cblock.iot{ background: linear-gradient(135deg,#7c3aed,#06b6d4); }
+
+    /* Sections/cards using darker glass panel to show background more */
+    section.card-section{
+      padding:18px; border-radius:12px; background: var(--panel);
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:var(--shadow); margin-top:18px;
+      transition: transform .35s cubic-bezier(.2,.9,.3,1), box-shadow .35s ease, opacity .45s;
+      opacity:0; transform: translateY(18px);
+      color:var(--text);
+    }
+    section.card-section.visible{ opacity:1; transform:none; }
+
+    h2.section-title{ margin:0 0 10px 0; font-size:16px; color:var(--text); font-weight:700; }
+
+    .section-body{ display:flex; flex-direction:column; gap:12px; color:var(--text); }
+
+    .job{
+      padding:12px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .job h3{ margin:0; font-size:15px; color:var(--text); }
+    .meta{ font-size:13px; color:var(--muted); margin-top:6px; }
+
+    /* Projects grid with thumbnails and hover-enlarge */
+    .projects{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:6px; }
+    .project{
+      padding:0; border-radius:12px; overflow:hidden; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      transition: transform .32s cubic-bezier(.2,.9,.3,1), box-shadow .32s ease;
+      will-change: transform;
+    }
+    .project:hover{ transform: translateY(-10px) scale(1.02); box-shadow:0 30px 90px rgba(3,12,30,0.18); }
+    .project-thumb{
+      height:150px; background-size:cover; background-position:center; display:block; transition: transform .45s cubic-bezier(.2,.9,.3,1);
+    }
+    .project:hover .project-thumb{ transform: scale(1.07); }
+    .project-body{ padding:14px; }
+    .project h3{ margin:0 0 6px 0; font-size:16px; color:var(--text); }
+    .project p{ margin:0; color:var(--muted); font-size:13px; }
+
+    /* Skills — colorful tiles with hover enlarge */
+    .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:8px; }
+    .skill-tile{
+      display:flex; gap:12px; align-items:center; padding:12px; border-radius:12px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      transition: transform .24s ease, box-shadow .24s ease;
+    }
+    .skill-tile:hover{ transform: translateY(-6px) scale(1.02); box-shadow:0 20px 60px rgba(3,12,30,0.12); }
+    .skill-icon{
+      width:52px; height:52px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:800;
+      flex-shrink:0;
+    }
+    .skill-icon.ec{ background: linear-gradient(135deg,var(--accent),var(--accent-2)); }
+    .skill-icon.stm{ background: linear-gradient(135deg,#0ea5a4,#60a5fa); }
+    .skill-meta{ display:flex; flex-direction:column; }
+    .skill-meta .label{ font-weight:700; color:var(--text); }
+    .skill-meta .sub{ font-size:12px; color:var(--muted); margin-top:4px; }
+
+    /* Contact card */
+    .contact-card{
+      padding:14px;border-radius:12px;background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    .contact-links a{ text-decoration:none;padding:8px 12px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042233;font-weight:700;margin-right:8px;display:inline-block; transition: transform .18s ease; }
+    .contact-links a:hover{ transform: translateY(-4px) scale(1.02); }
+
+    /* Footer */
+    footer{
+      margin-top:26px; border-radius:12px; overflow:hidden; background-image: var(--header-banner); background-size:cover; background-position:center;
+    }
+    footer .foot-overlay{
+      background: linear-gradient(90deg, rgba(3,10,30,0.86), rgba(7,24,48,0.76));
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:18px 22px;
+      backdrop-filter: blur(6px);
+    }
+    .foot-left{ color:var(--text); font-weight:700; }
+    .foot-right{ color:var(--muted); font-size:13px; }
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{ flex-direction:column; align-items:flex-start; gap:14px; }
+      .hero-right{ align-self:flex-end; }
+      .profile-wrap{ width:96px; height:96px; border-width:4px; }
+      .projects{ grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    }
+    @media (max-width:640px){
+      .container{ padding:18px 14px; }
+      .hero-name{ font-size:28px; }
+    }
+
+    /* utility — small entrance */
+    .fade-up { opacity:0; transform: translateY(14px); transition: all .7s cubic-bezier(.2,.9,.3,1); }
+    .fade-up.visible { opacity:1; transform:none; }
+
+  </style>
+</head>
+<body>
+  <div class="page-overlay" aria-hidden="true"></div>
+
+  <div class="container">
+    <!-- Header (minimal) -->
+    <header>
+      <div class="brand" aria-hidden="false">
+        <!-- mark now uses the LinkedIn profile image (keeps same hover transition) -->
+        <div class="mark" title="Vyankatesh Sharma"></div>
+        <div>
+          <div class="name">Vyankatesh Sharma</div>
+          <div class="role">Electronics & Telecommunication • Engineering</div>
+        </div>
+      </div>
+
+      <div style="margin-left:auto;">
+        <div class="color-blocks" aria-hidden="true">
+          
+        </div>
+      </div>
+    </header>
+
+    <main>
+      
+      <!-- HERO: only name, image and phone number as requested -->
+      <section class="hero fade-up" aria-labelledby="hero-heading">
+        <div class="hero-left">
+          <div id="hero-heading" class="hero-name">Vyankatesh Sharma</div>
+          <div class="hero-sub">B.Tech • Embedded Systems & Robotics</div>
+
+          <div class="translucent-row" aria-hidden="false">
+            <div class="trans-box" style="display:flex;flex-direction:column">
+              <div style="font-size:12px;color:var(--muted)">Collage</div>
+              <div class="phone-pill" style="margin-top:8px">Pimpri Chinchwad College Of Engineering</div>
+            </div>
+
+            <div class="trans-box" style="display:flex;flex-direction:column">
+              <div style="font-size:12px;color:var(--muted)">Location</div>
+              <div style="font-weight:800;margin-top:8px">Pune, India</div>
+  </div>
+  </div>
+
+          <div class="color-blocks" style="margin-top:12px">
+            <div class="cblock tech">Embedded System</div>
+            <div class="cblock iot">C/C++</div>
+            <div class="cblock power">MATLAB</div>
+            <div class="cblock tech">STM32</div>
+          </div>
+          <div style="margin-bottom:6px"><strong>Email:</strong> <a href="mailto:sharmavyankatesh2005@gmail.com" style="color:var(--accent-2);text-decoration:none;font-weight:800">sharmavyankatesh2005@gmail.com</a></div>
+          <div style="margin-bottom:6px"><strong>Phone:</strong> <a href="mailto:sharmavyankatesh2005@gmail.com" style="color:var(--accent-2);text-decoration:none;font-weight:800">+91 8983875004</a></div>
+          
+        </div>
+        
+
+        <div class="hero-right" aria-hidden="false">
+          <div class="profile-wrap" role="img" aria-label="Profile picture"></div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="card-section fade-up" id="about" aria-labelledby="about-title">
+        <h2 id="about-title" class="section-title">About</h2>
+        <div class="section-body">
+          <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;">
+            <div style="flex:1;min-width:260px">
+              <strong>Summary</strong>
+              <p style="margin-top:8px;color:var(--muted);">
+                Electronics & Telecommunication student focused on embedded firmware and hardware prototypes. I build STM32/ESP32-based systems, work on robotics and display interfacing, and enjoy optimizing embedded software for reliability.
+              </p>
+            </div>
+
+            <div style="width:320px;">
+              <div class="trans-box" style="padding:12px;">
+                <div style="font-size:12px;color:var(--muted)">Experience</div>
+                <div style="font-weight:800;margin-top:6px">AMB's C-DSP — 2022–2023</div>
+                <div style="font-size:13px;color:var(--muted);margin-top:8px">Arduino-based projects: line followers, embedded prototypes. Focus on debugging and firmware.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
+            <div style="flex:1;min-width:200px;">
+              <strong>Education</strong>
+              <div style="margin-top:8px;color:var(--muted);">
+                <div><strong>Pimpri Chinchwad College of Engineering</strong><br>B.Tech — Electronics & Telecommunication (2024–2027)</div>
+                <div style="margin-top:8px"><strong>Vishweshwarayya Institute of Engineering & Technology</strong><br>Diploma — Electronics & Telecommunication (2021–2024) — 86.76%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS with improved related images -->
+      <section class="card-section fade-up" id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="section-title">Projects</h2>
+        <div class="projects">
+          <!-- Surveillance Car: image more related to robotics / small wheeled robot -->
+          <article class="project" aria-labelledby="p1-title">
+            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1400&q=80');"></div>
+            <div class="project-body">
+              <h3 id="p1-title">Surveillance Car using ESP32-CAM</h3>
+              <div class="meta">Diploma Final Year Project</div>
+              <p style="margin-top:8px;color:var(--muted);">Web-controlled surveillance car with live camera streaming using ESP32-CAM. Implemented remote control, MJPEG streaming and optimized streaming performance for low-latency remote viewing.</p>
+            </div>
+          </article>
+
+          <!-- SUNSWIFT: image showing solar panels / solar car -->
+          <article class="project" aria-labelledby="p2-title">
+            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1400&q=80');"></div>
+            <div class="project-body">
+              <h3 id="p2-title">SUNSWIFT — Dual-axis Solar Tracking</h3>
+              <div class="meta">Capstone</div>
+              <p style="margin-top:8px;color:var(--muted);">Mobile-operated solar car with LDR-based dual-axis tracking and microcontroller control to maximize energy capture; mechanical control and power routing optimized for efficiency.</p>
+            </div>
+          </article>
+
+          <!-- STM32 line follower (keeps same theme) -->
+          <article class="project" aria-labelledby="p3-title">
+            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80');"></div>
+            <div class="project-body">
+              <h3 id="p3-title">STM32 Line Follower with Obstacle Avoiding</h3>
+              <div class="meta">Ongoing</div>
+              <p style="margin-top:8px;color:var(--muted);">STM32F103C8T6-based robot using IR sensors for line detection and ultrasonic for obstacle avoidance. Programmed using STM32CubeIDE and HAL libraries.</p>
+            </div>
+          </article>
+
+          <!-- Mini projects -->
+          <article class="project" aria-labelledby="p4-title">
+            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80');"></div>
+            <div class="project-body">
+              <h3 id="p4-title">Mini Embedded Projects (Arduino / ESP32)</h3>
+              <div class="meta">Coursework & Labs</div>
+              <p style="margin-top:8px;color:var(--muted);">Various microcontroller projects including sensor interfacing, motor control, P10 display experiments, and debugging tasks.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS & CONTACT -->
+      <section class="card-section fade-up" id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section-title">Skills & Contact</h2>
+        <div class="section-body">
+
+          <div class="skills-grid" role="list">
+            <div class="skill-tile" role="listitem">
+              <div class="skill-icon ec">C</div>
+              <div class="skill-meta">
+                <div class="label">Operating Systems</div>
+                <div class="sub">Linex Shell script,Windows OS</div>
+              </div>
+            </div>
+
+            <div class="skill-tile" role="listitem">
+              <div class="skill-icon stm">STM</div>
+              <div class="skill-meta">
+                <div class="label">STM32 (CubeIDE)</div>
+                <div class="sub">HAL, peripheral configuration, RTOS basics</div>
+              </div>
+            </div>
+
+            <div class="skill-tile" role="listitem">
+              <div class="skill-icon iot">IoT</div>
+              <div class="skill-meta">
+                <div class="label">Arduino / ESP32</div>
+                <div class="sub">Embedded/RTOS Basics</div>
+              </div>
+            </div>
+
+            <div class="skill-tile" role="listitem">
+              <div class="skill-icon power" style="background:linear-gradient(135deg,#ff7a7a,#ffb86b)">EE</div>
+              <div class="skill-meta">
+                <div class="label">Cloud Computing</div>
+                <div class="sub">Cloud Computing basics,Application</div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div style="margin-top:12px;">
+            <div class="contact-card">
+              <h3 style="margin:0 0 8px 0;color:var(--text);">Contact</h3>
+              <div style="color:var(--muted);font-weight:600">
+                <div style="margin-bottom:6px"><strong>Email:</strong> <a href="mailto:sharmavyankatesh2005@gmail.com" style="color:var(--accent-2);text-decoration:none;font-weight:800">sharmavyankatesh2005@gmail.com</a></div>
+                <div style="margin-bottom:6px"><strong>Phone:</strong> +91 8983875004</div>
+                <div style="margin-bottom:8px"><strong>Location:</strong> Pune, India</div>
+                <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;" class="contact-links">
+                  <a href="https://www.linkedin.com/in/vyankatesh-sharma-ba2148348" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="mailto:sharmavyankatesh2005@gmail.com">Email</a>
+                  <a href="#" onclick="window.print();return false;" style="background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042233">Print</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+<!-- Font Awesome for icons (add once in <head> if not already added) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Font Awesome (only once in <head>) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- HOBBIES SECTION -->
+<section class="card-section fade-up" id="hobbies">
+  <h2 class="section-title">Hobbies</h2>
+  <div class="hobbies-scroll">
+    <div class="hobby-card"><i class="fa-solid fa-gamepad"></i><span>Video Games</span></div>
+    <div class="hobby-card"><i class="fa-solid fa-music"></i><span>Music</span></div>
+    <div class="hobby-card"><i class="fa-solid fa-camera"></i><span>Photography</span></div>
+    <div class="hobby-card"><i class="fa-solid fa-plane-departure"></i><span>Travelling</span></div>
+    <div class="hobby-card"><i class="fa-solid fa-code"></i><span>Coding</span></div>
+    <div class="hobby-card"><i class="fa-solid fa-book-open"></i><span>Reading</span></div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="foot-overlay">
+        <div class="foot-left">© <span id="year">2025</span> Vyankatesh Sharma</div>
+        <div class="foot-right">Made with ♥ • Electronics & Embedded Systems</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // set copyright year
+    try {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    } catch(e){}
+
+    // smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(!href || href === '#') return;
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // Intersection observer: reveal sections and animate small interactive effects
+    const sections = document.querySelectorAll('.card-section, .hero');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          entry.target.classList.add('fade-up');
+        }
+      });
+    }, { threshold: 0.18 });
+
+    sections.forEach(s=> observer.observe(s));
+
+    // fallback in case observer doesn't fire
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.card-section').forEach((el, i)=> {
+        setTimeout(()=> el.classList.add('visible'), 160 + i*80);
+      });
+    });
+  </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
